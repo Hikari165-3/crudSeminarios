@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seminarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container my-5">
+    <h1 class="text-center">Lista de Inscritos</h1>
+    <a href="{{url_for('nuevo')}}" class="btn btn-success">Nuevo</a>
+    <br>
+    <table border="1" class="table table-info">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Turno</th>
+                <th>Seminarios</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        
+        {% for item in seminarios %}
+        <tr>
+            <td class="table-warning">{{item.id}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellidos}}</td>
+            <td>{{item.turno}}</td>
+            <td class="table-success">{{item.disponible}}</td>
+            <td class="table-light"><a href="{{url_for('editar',id=item.id)}}" class="btn btn-primary">Editar</a></td>
+            <td class="table-light">
+                <form action="{{url_for('eliminar',id=item.id)}}" method="post">
+                    <input type="submit" value="eliminar" class="btn btn-danger">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

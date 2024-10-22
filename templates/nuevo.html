@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inscrito</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesomw/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center">Registro en Seminarios</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="{{url_for('nuevo')}}" method="POST">
+          <div class="form-group">
+            <label>Datos</label>
+            <label for="date">Fecha:</label>
+            <input type="date" class="form-control" id="date" name="fecha" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Apellidos:</label>
+            <input type="text" class="form-control" id="lastName" name="apellidos" required>
+          </div>
+          <div class="form-group">
+            <label>Turno:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turno" id="turnoMañana" value="Mañana">
+              <label class="form-check-label" for="turnoMañana">Mañana</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turno" id="turnoTarde" value="Tarde">
+              <label class="form-check-label" for="turnoTarde">Tarde</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turno" id="turnoNoche" value="Noche">
+              <label class="form-check-label" for="turnoNoche">Noche</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Seminarios disponibles:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="disponibles" value="Inteligencia Artificial" id="ia">
+              <label class="form-check-label" for="ia">Inteligencia Artificial</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="disponibles" value="Machine Learning" id="ml">
+              <label class="form-check-label" for="ml">Machine Learning</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="disponibles" value="Simulación con Arena" id="arena">
+              <label class="form-check-label" for="arena">Simulación con Arena</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="disponibles" value="Robótica Educativa" id="re">
+              <label class="form-check-label" for="re">Robótica Educativa</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar registro</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+</body>
+</html>
